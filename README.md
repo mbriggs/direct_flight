@@ -2,11 +2,11 @@
 
 When using s3, most people upload to their app, the app processes the file in some way, then the app uploads the final result to s3
 
-![S3 Flow](/readme-graphs/normal-flow.png?raw=true "Normal S3 Flow")
+![S3 Flow](/readme-graphs/normal-flow.mermaid.png?raw=true "Normal S3 Flow")
 
 This is the simplest approach, and the one you should use, unless for some reason you cant based on the resource constraints of your app server (for example, uploading large files to heroku). This is where direct flight kicks in
 
-![New S3 Flow](/readme-graphs/direct-flight-flow.png?raw=true "Direct Flight S3 Flow")
+![New S3 Flow](/readme-graphs/direct-flight-flow.mermaid.png?raw=true "Direct Flight S3 Flow")
 
 In this case, the browser gets credentials from the app server, uses them to upload to s3, and then tells the app server about the result.
 
@@ -33,7 +33,7 @@ The package can be installed as:
 
 ## How to implement a Direct Flight to S3
 
-![Direct Flight sequence of events](/readme-graphs/direct-flight-sequence.png?raw=true "Direct Flight Event Sequence")
+![Direct Flight sequence of events](/readme-graphs/direct-flight-sequence.mermaid.png?raw=true "Direct Flight Event Sequence")
 
 For the processing side, a library like arc would make it quite easy to implement.
 
